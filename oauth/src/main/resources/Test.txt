@@ -1,0 +1,6 @@
+http://localhost:9003/oauth/token?username=user&password=12345&grant_type=password&scope=all&client_id=admin&client_secret=abc123
+
+正常
+http://localhost:9001/getUser
+
+http://localhost:9001/add?access_token=3c7f8539-b019-4782-b171-e8462537c057
