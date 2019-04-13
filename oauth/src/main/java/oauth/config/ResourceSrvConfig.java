@@ -1,8 +1,7 @@
-package oauth.config;//package com.chk.config;
+//package oauth.config;//package com.chk.config;
 //
-//import Const;
+//import oauth.Const;
 //import org.springframework.context.annotation.Configuration;
-//import org.springframework.http.HttpMethod;
 //import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 //import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 //import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
@@ -28,6 +27,7 @@ package oauth.config;//package com.chk.config;
 //     * 設定需要認證的PATH
 //     * 如果設定 .antMatcher("/**").authorizeRequests()
 //     * 會導致下面設定全失效，故改成這樣設定
+//     *
 //     * @param http
 //     * @throws Exception
 //     */
@@ -37,13 +37,9 @@ package oauth.config;//package com.chk.config;
 //        http
 //                .anonymous().disable()
 //                .authorizeRequests()
-//                .antMatchers("/doRead/*").access("#oauth2.hasScope('read')")
-//                .antMatchers("/doWrite/*").access("#oauth2.hasScope('write')")
-//                .antMatchers("/doAdmin/*").access("hasAuthority('ADMIN_ROLE')")
-//                .antMatchers("/doUser/*").access("hasAuthority('USER_ROLE')")
-//                .antMatchers(HttpMethod.GET,"/doDoubleChk/*").access("(#oauth2.hasScope('write') or #oauth2.hasScope('read')) and hasAuthority('USER_ROLE')")
-//                .anyRequest().authenticated()
-//                .and()
-//                .exceptionHandling();
+//                .antMatchers("/actuator/**").permitAll()
+//                .antMatchers("/oauth/**").permitAll()
+//                .anyRequest().authenticated();
+//
 //    }
 //}
